@@ -39,7 +39,7 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.2.0</version>
-            <!--<scope>test</scope>-->
+           <!-- <scope>test</scope>-->
         </dependency>
 
 
@@ -62,16 +62,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <!--设置参数命令行-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <!--<suiteXmlFiles>
-                        &lt;!&ndash;设置要运行的testng.xml文件&ndash;&gt;
-                        <suiteXmlFile>${xmlFileName}</suiteXmlFile>
-                    </suiteXmlFiles>-->
                 </configuration>
-
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
@@ -80,17 +74,15 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
                 <configuration>
-                    <reportVersion>2.13.2</reportVersion>
+                    <reportVersion>${allure.version}</reportVersion>
                     <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure.version}/allure-commandline-${allure.version}.zip</allureDownloadUrl>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
